@@ -1,0 +1,796 @@
+/* ===== پایه ریسپانسیو بهتر ===== */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #dbeafe);
+    color: #111;
+}
+
+/* ===== کانتینر کلی ===== */
+header, .hero, .grid, footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== هدر شیشه‌ای ===== */
+header{
+    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.85);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+/* ===== لوگو ===== */
+.logo{
+    font-size: 34px;
+    font-weight: 900;
+}
+
+/* ===== دکمه‌ها ===== */
+.button{
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+    box-shadow: 0 6px 15px rgba(37,99,235,0.25);
+}
+
+.button:hover{
+    transform: scale(1.05);
+}
+
+/* ===== کارت‌ها ===== */
+.card{
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: .3s;
+    text-align: center;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+}
+
+/* ===== افراد (تگ‌ها) ===== */
+.person-tag{
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.person-tag:hover{
+    transform: translateX(-5px);
+}
+
+/* ===== سرچ ===== */
+.search{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.search:focus{
+    box-shadow: 0 8px 25px rgba(37,99,235,0.25);
+}
+
+/* ===== گرید ===== */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+/* ===== عنوان بزرگ ===== */
+.hero h1{
+    font-size: 42px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== موبایل ===== */
+@media (max-width: 768px){
+
+    .logo{
+        font-size: 26px;
+    }
+
+    .hero h1{
+        font-size: 28px;
+    }
+
+    .card{
+        margin: 8px 0;
+    }
+
+    .button{
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+/* ===== خیلی کوچک (گوشی ضعیف) ===== */
+@media (max-width: 480px){
+
+    body{
+        font-size: 14px;
+    }
+
+    .hero h1{
+        font-size: 24px;
+    }
+
+}
+/* ===== ✨ افکت‌های زیباسازی جدید ===== */
+
+/* انیمیشن ورود کارت‌ها */
+.card, .person-tag{
+    animation: fadeIn .4s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* هاور شیک کارت‌ها */
+.card:hover{
+    box-shadow: 0 15px 35px rgba(37,99,235,0.25);
+}
+
+/* بزرگ شدن نرم سرچ */
+.search{
+    transition: .3s;
+}
+
+.search:focus{
+    transform: scale(1.02);
+}
+
+/* افکت نور روی افراد */
+.person-tag{
+    position: relative;
+    overflow: hidden;
+}
+
+.person-tag::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: .4s;
+}
+
+.person-tag:hover::after{
+    left: 100%;
+}
+
+/* کلیک نرم دکمه‌ها */
+.button:active{
+    transform: scale(0.95);
+}
+/* ===== پس‌زمینه حرفه‌ای‌تر ===== */
+body{
+    background: radial-gradient(circle at top, #eaf2ff, #dbeafe, #f8fafc);
+}
+
+/* ===== کارت‌های پریمیوم ===== */
+.card{
+    border: 1px solid rgba(37,99,235,0.08);
+    backdrop-filter: blur(8px);
+}
+
+.card:hover{
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 45px rgba(37,99,235,0.18);
+}
+
+/* ===== عنوان‌ها جذاب‌تر ===== */
+.card h2{
+    position: relative;
+    display: inline-block;
+}
+
+.card h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    border-radius: 10px;
+}
+
+/* ===== دکمه‌های حرفه‌ای ===== */
+.button{
+    position: relative;
+    overflow: hidden;
+}
+
+.button::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: rgba(255,255,255,0.25);
+    transform: skewX(-20deg);
+    transition: .5s;
+}
+
+.button:hover::after{
+    left: 120%;
+}
+
+/* ===== تگ افراد خیلی مدرن ===== */
+.person-tag{
+    border-left: 4px solid #1d4ed8;
+    letter-spacing: .3px;
+}
+
+.person-tag:hover{
+    transform: translateX(-6px);
+    box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+}
+
+/* ===== هدر حرفه‌ای‌تر ===== */
+header{
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== حس شیشه‌ای واقعی ===== */
+.card, header{
+    backdrop-filter: blur(12px);
+}
+
+/* ===== انیمیشن نرم کل صفحه ===== */
+*{
+    scroll-behavior: smooth;
+}
+/* ===== بک‌گراند حرفه‌ای زنده ===== */
+body{
+    background: linear-gradient(-45deg, #eef2f7, #dbeafe, #f8fafc, #e0e7ff);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* ===== هدر شیشه‌ای واقعی ===== */
+header{
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== لوگو خیلی خفن ===== */
+.logo{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== کارت‌های پریمیوم ===== */
+.card{
+    border-radius: 22px;
+    border: 1px solid rgba(37,99,235,0.1);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    transition: all .35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* نور متحرک روی کارت */
+.card::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(37,99,235,0.15), transparent 60%);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: .5s;
+}
+
+.card:hover::before{
+    opacity: 1;
+}
+
+.card:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0
+    /* ===== بک‌گراند خیلی نرم و لوکس ===== */
+body{
+    background: radial-gradient(circle at top, #ffffff, #eef2f7, #dbeafe);
+}
+
+/* ===== هدر لوکس ===== */
+header{
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== لوگو سینمایی ===== */
+.logo{
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+/* ===== کارت‌های فوق حرفه‌ای ===== */
+.card{
+    border-radius: 26px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(37,99,235,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all .4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* نور خیلی نرم داخل کارت */
+.card::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(37,99,235,0.12), transparent 60%);
+    opacity: 0;
+    transition: .5s;
+}
+
+.card:hover::before{
+    opacity: 1;
+}
+
+.card:hover{
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 60px rgba(37,99,235,0.25);
+}
+
+/* ===== عنوان خیلی حرفه‌ای ===== */
+.hero h1{
+    font-size: 58px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #2563eb, #60a5fa, #1d4ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    filter: drop-shadow(0 10px 20px rgba(37,99,235,0.25));
+}
+
+/* ===== دکمه فوق لوکس ===== */
+.button{
+    border-radius: 16px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 12px 30px rgba(37,99,235,0.35);
+    font-weight: bold;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+
+/* نور موجی روی دکمه */
+.button::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 130%;
+    height: 100%;
+    background: rgba(255,255,255,0.25);
+    transform: skewX(-20deg);
+    transition: .7s;
+}
+
+.button:hover::after{
+    left: 130%;
+}
+
+/* ===== تگ افراد خیلی تمیز ===== */
+.person-tag{
+    border-radius: 16px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    box-shadow: 0 12px 28px rgba(37,99,235,0.3);
+    font-weight: 700;
+}
+
+.person-tag:hover{
+    transform: translateX(-10px) scale(1.04);
+}
+
+/* ===== سرچ شیشه‌ای مدرن ===== */
+.search{
+    border-radius: 16px;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: .3s;
+}
+
+.search:focus{
+    transform: scale(1.03);
+    box-shadow: 0 12px 35px rgba(37,99,235,0.25);
+}
+
+/* ===== انیمیشن ورود ===== */
+.card, .person-tag{
+    animation: fadeInUp .5s ease;
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== 🌟 ویکی چمران - استایل نهایی ===== */
+
+/* کل سایت حس مدرن و تمیز */
+body{
+    font-family: Tahoma, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #dbeafe, #f8fafc);
+    transition: all .4s ease;
+}
+
+/* کارت‌ها مثل اپلیکیشن واقعی */
+.card{
+    border-radius: 20px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(37,99,235,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: .3s;
+}
+
+/* حس زنده شدن کارت‌ها */
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(37,99,235,0.2);
+}
+
+/* دکمه‌ها مدرن */
+.button{
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 10px 25px rgba(37,99,235,0.3);
+    transition: .3s;
+}
+
+.button:hover{
+    transform: scale(1.07);
+}
+
+/* تگ افراد */
+.person-tag{
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    padding: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.person-tag:hover{
+    transform: translateX(-8px);
+}
+
+/* سرچ */
+.search{
+    border-radius: 14px;
+    padding: 14px;
+    border: none;
+    outline: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.search:focus{
+    box-shadow: 0 10px 30px rgba(37,99,235,0.25);
+    transform: scale(1.02);
+}
+
+/* عنوان اصلی */
+.hero h1{
+    font-size: 48px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* انیمیشن ورود نرم */
+.card, .person-tag{
+    animation: fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== 🌙 دارک مود ===== */
+body.dark{
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+body.dark .card{
+    background: rgba(30, 41, 59, 0.8);
+    color: white;
+}
+
+body.dark header{
+    background: rgba(2, 6, 23, 0.8);
+}
+body{
+    background: #0b0f1a;
+    color: #e5e7eb;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* لایه نور متحرک پشت سایت */
+body::before{
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.25), transparent 40%),
+                radial-gradient(circle at 80% 30%, rgba(59,130,246,0.18), transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(99,102,241,0.15), transparent 40%);
+    animation: moveBg 12s linear infinite;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+@keyframes moveBg{
+    0%{transform: rotate(0deg) scale(1);}
+    50%{transform: rotate(180deg) scale(1.2);}
+    100%{transform: rotate(360deg) scale(1);}
+}
+<p>
+ساخته شده توسط <b style="color:#60a5fa;">آقا حاجبی</b> ✨
+</p>
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 35px 15px;
+
+    /* تیره واقعی */
+    background: rgba(0, 0, 0, 0.75);
+
+    /* متن روشن */
+    color: #e5e7eb;
+
+    font-size: 14px;
+
+    /* مهم: روی همه لایه‌ها بیاد */
+    position: relative;
+    z-index: 999;
+    margin-top: 40px;
+
+    /* شیشه‌ای شیک */
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer b{
+    color: #60a5fa;
+}
+
+/* اگر بک‌گراند متحرک داری، این کمک می‌کنه فوتر قاطی نشه */
+body::before{
+    z-index: -1;
+}
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 35px 15px;
+
+    /* سفید تمیز */
+    background: #ffffff;
+
+    /* متن تیره */
+    color: #111827;
+
+    font-size: 14px;
+
+    /* کادر مشکی */
+    border-top: 3px solid #0f172a;
+
+    /* حالت شیک */
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+
+    position: relative;
+    z-index: 10;
+    margin-top: 40px;
+}
+
+/* اسم آبی بمونه */
+footer b{
+    color: #2563eb;
+}
+
+/* اگر بک‌گراند متحرک داری */
+body::before{
+    z-index: -1;
+}
+footer{
+    all: unset; /* همه استایل‌های قبلی رو پاک می‌کنه */
+
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    padding: 35px 15px;
+
+    background: #fff !important;
+    color: #111827 !important;
+
+    border-top: 4px solid #000;
+
+    box-shadow: 0 -8px 25px rgba(0,0,0,0.2);
+
+    font-size: 14px;
+
+    margin-top: 40px;
+
+    position: relative;
+    z-index: 999;
+}
+
+footer b{
+    color: #2563eb !important;
+}
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+
+    background: #ffffff;
+    color: #111827;
+
+    border-top: 4px solid #000;
+
+    box-shadow: 0 -10px 25px rgba(0,0,0,0.15);
+
+    font-size: 14px;
+}
+
+footer b{
+    color: #2563eb;
+}
+.site-footer{
+    text-align: center;
+    padding: 28px 15px;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    /* خط مشکی زیرش */
+    border-top: 4px solid #000;
+
+    /* سایه برای برجسته شدن */
+    box-shadow: 0 -8px 25px rgba(0,0,0,0.15);
+
+    margin-top: 40px;
+
+    position: relative;
+}
+
+/* اسم سازنده */
+.site-footer b{
+    color: #2563eb;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+/* یه خط تزئینی خیلی شیک زیر متن */
+.site-footer::after{
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: #000;
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+.site-footer{
+    text-align: center;
+    padding: 30px;
+    background: #ffffff;
+    border-top: 4px solid #000;
+    box-shadow: 0 -10px 25px rgba(0,0,0,0.15);
+    font-size: 14px;
+    color: #111827;
+}
+
+.creator{
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    color: white;
+
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(37,99,235,0.3);
+}
+.site-footer {
+  text-align: center;
+  padding: 15px 0;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  border-top: 2px solid #333;
+}
+
+.creator {
+  font-weight: bold;
+  color: #00d9ff;
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+}
